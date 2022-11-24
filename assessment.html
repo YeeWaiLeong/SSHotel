@@ -4,18 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Projects - Brand</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <title>Assessment - Sama Sama Hotel</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="/assets/css/Add-Another-Button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="/assets/css/Table-With-Search-search-table.css">
+    <link rel="stylesheet" href="/assets/css/Table-With-Search.css">
 </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav" style="background: #8b8b8b;color: #ffffff;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon" style="background: rgb(255,255,255);"><img src="assets/img/SamaSamaHotelLogo1.png" width="27" height="27"></span><span style="color: rgba(255,255,255,0.9);">Sama Sama Hotel</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="home.html"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon" style="background: rgb(255,255,255);"><img src="/assets/img/SamaSamaHotelLogo1.png" width="27" height="27"></span><span style="color: rgba(255,255,255,0.9);">Sama Sama Hotel</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="home.html" style="color: rgba(255,255,255,0.9);">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="training.html" style="color: #ffffff;">Training Materials&nbsp;</a></li>
+                    <li class="nav-item"><a class="nav-link" href="training.php" style="color: #ffffff;">Training Materials&nbsp;</a></li>
                     <li class="nav-item"><a class="nav-link active" href="assessment.html" style="color: #ffffff;">Assessment</a></li>
                     <li class="nav-item"></li>
                     <li class="nav-item"><a class="nav-link" href="feedback.html" style="color: #ffffff;">Feedback</a></li>
@@ -27,42 +35,20 @@
         <div class="container py-5">
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2 class="fw-bold">Let's Quiz</h2>
-                    <p class="text-muted w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc. Vestibulum dui eget ultrices.</p>
+                    <h2 class="fw-bold">Assessment</h2>
+                    <p class="fw-bold text-success mb-2" style="font-size: 20px;">Click on your assigned assessment to start</p>
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
-                <div class="col mb-4">
-                    <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="assets/img/h6.jpg" style="height: 250px;"></a>
-                        <div class="py-4"><span class="badge bg-primary mb-2">10 Question</span>
-                            <h4 class="fw-bold">Hotel Departments</h4>
-                            <p class="text-muted"><span style="color: rgb(77, 77, 77);">Below is a trivia question quiz on hotel departments and their functions! For a hotel to work effectively, there are a number of resources required, and this is why different departments are working together put in place to ensure the business runs smoothly.&nbsp;</span><br></p>
+            <div id="row" class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;border-width: 10px;">
+                <div class="d-none">
+                <div id="col" class="col" style="padding-bottom: 25px;">
+                    <div class="card" style="box-shadow: 1px 1px 3px 0px;border-color: var(--bs-black);border-radius: 10px;padding-bottom: 13px;">
+                        <div class="card-body text-truncate text-wrap mh-100" style="height: 193px;"><span id="numberOfQuestions" class="badge bg-primary mb-2">10 Question</span><a value="" onclick="startAssessment(this)" class="stretched-link" href="#"></a>
+                            <h4 id="title" class="fw-bold card-title">Hotel Departments</h4>
+                            <p class="text-muted card-text"><span id="description" style="color: rgb(77, 77, 77);">Below is a trivia question quiz on hotel departments and their functions! For a hotel to work effectively, there are a number of resources required, and this is why different departments are working together put in place to ensure the business runs smoothly.&nbsp;</span></p>
                         </div>
                     </div>
                 </div>
-                <div class="col mb-4">
-                    <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="assets/img/h4.jpg" style="height: 250px;"></a>
-                        <div class="py-4"><span class="badge bg-primary mb-2">17 Question</span>
-                            <h4 class="fw-bold">Types of Hotel</h4>
-                            <p class="text-muted"><span style="color: rgb(77, 77, 77);">Have you visited any hotels recently? How much do you know about various types of hotels? This "types of hotels quiz" gives you an opportunity to test your knowledge about hotels as well as to expand it. Luxury, micro stay, boutique, full-service, selected service, timeshare, and motels are just but a few mentioned types of hotels.</span><br></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="assets/img/h7.jpg" style="height: 250px;"></a>
-                        <div class="py-4"><span class="badge bg-primary mb-2">10 Question</span>
-                            <h4 class="fw-bold">Hotel Reservation</h4>
-                            <p class="text-muted"><span style="color: rgb(77, 77, 77);">Hotel Reservation is a systematized procedure that allocates or terminates a reservation on request of the client both offline and online.&nbsp;This quiz will assess your knowledge and make you aware of different types of reservations system in hotels.</span><br><br></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="assets/img/h5.jpg" style="height: 250px;"></a>
-                        <div class="py-4"><span class="badge bg-primary mb-2">15 Question</span>
-                            <h4 class="fw-bold">Hotel Accounting Procedures</h4>
-                            <p class="text-muted"><span style="color: rgb(77, 77, 77);">Are you conversant with hotel accounting procedures? The hotel industry rakes in millions a year, and this means that they need to keep proper books of accounting if they are to pay the right amount of taxes.</span><br></p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -89,9 +75,68 @@
             </div>
         </div>
     </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bold-and-bright.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bs-init.js"></script>
+    <script src="/assets/js/bold-and-bright.js"></script>
+    <script src="/assets/js/Table-With-Search.js"></script>
+    <script>
+        fetch('php/availableAssessments.php',
+        {
+            method: 'get'
+        }).then((response) => 
+        {
+            console.log(response.status);
+            return response.json();
+        }).then((response) =>
+        {
+            if(response['response'] == "Error")
+            {
+                console.log("Error getting available assessments.");
+            }
+            else if(response['response'] == "OK")
+            {
+                var num = 0;
+                const node = document.getElementById("col");
+                for(var key in response)
+                {
+                    if(key != "response")
+                    {
+                        const clone = node.cloneNode(true);
+                        num++;
+                        clone.id = "col" + num;
+                        const collection = clone.children[0].children[0];
+                        for(i = 0; i < response[key].length; i++)
+                        {
+                            if(i == 0)
+                            collection.children[1].value = response[key][i];
+                            else if(i == 5)
+                            collection.children[0].innerHTML = response[key][i] + " Questions";
+                            else if(i == 1)
+                            collection.children[2].innerHTML = response[key][i];
+                            else if(i == 2)
+                            collection.children[3].children[0].innerHTML = response[key][i];
+                        }
+                        document.getElementById("row").appendChild(clone);
+                    }
+                }
+            }
+            else
+            {
+                console.log(response["response"]);
+            }
+        }).catch((error) => 
+        {
+            console.log(error);
+        })
+
+        function startAssessment(e)
+        {
+            const id = e.value.toString();
+            sessionStorage.setItem("id", id);
+            window.location = "assessmentPage.html";
+        }
+    </script>
 </body>
 
 </html>

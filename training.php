@@ -4,20 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Feedback - Sama Sama Hotel</title>
+    <title>Materials - Sama Sama Hotel</title>
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="/assets/css/Add-Another-Button.css">
-    <link rel="stylesheet" href="/assets/css/Articles-Cards-images.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="/assets/css/Login-Form-Basic-icons.css">
     <link rel="stylesheet" href="/assets/css/Table-With-Search-search-table.css">
     <link rel="stylesheet" href="/assets/css/Table-With-Search.css">
 </head>
+
+<?php require_once('config.php'); ?>
 
 <body style="/*background: url(&quot;design.jpg&quot;);*/background-position: 0 -60px;">
     <nav class="navbar navbar-light navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav" style="background: #8b8b8b;color: #ffffff;">
@@ -25,38 +25,40 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="home.html" style="color: rgba(255,255,255,0.9);">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="training.php" style="color: #ffffff;">Training Materials&nbsp;</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="training.php" style="color: #ffffff;">Training Materials&nbsp;</a></li>
                     <li class="nav-item"><a class="nav-link" href="assessment.html" style="color: #ffffff;">Assessment</a></li>
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link active" href="feedback.html" style="color: #ffffff;">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="feedback.html" style="color: #ffffff;">Feedback</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <section class="py-5">
         <div class="container py-5">
-            <div class="row mb-5">
+            <div class="row mb-4 mb-lg-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2 class="fw-bold">Feedback&nbsp;</h2>
-                    <p class="fw-bold text-success mb-2" style="font-size: 20px;">Don't hesitate to share</p>
+                    <h3 class="fw-bold"></h3>
+                    <h2 class="fw-bold">My Materials</h2>
+                    <p class="fw-bold text-success mb-2" style="font-size: 20px;">Click on it to start downloading</p>
                 </div>
             </div>
-        </div>
-        <div data-bss-parallax-bg="true" style="background-image: url(/assets/img/p1.jpg);background-position: center;background-size: cover;padding: 100px;">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-4 col-lg-4 col-xl-4 rounded" style="background: #a8bade;padding: 30px;padding-top: 0px;">
-                <div>
-                    <form class="p-3 p-xl-4" method="post" style="margin: 3px;">
-                        <div class="mb-3"></div>
-                        <h5 class="fw-bold text-center" style="color: #ffff;">Training Evaluation Form</h5>
-                        <div class="mb-3"></div>
-                        <div class="mb-3"></div>
-                        <div><a class="btn btn-primary shadow d-block w-100" role="button" href="evaluationPage.php" style="height: 45px;">Click Here To Start</a></div>
-                    </form>
+            <div class="container py-4 py-xl-5">
+                <div class="row gy-4 row-cols-2 row-cols-md-3 row-cols-xl-4">
+                    <?php 
+                        $p_qry = $conn->query("SELECT * FROM clients");
+                        while($row = $p_qry->fetch_assoc()):
+                    ?>
+                    <div class="col" id="modal-<?php echo $row['id'] ?>">
+                        <div class="card" style="box-shadow: 1px 1px 2px 0px;padding-bottom: 22px;"><a href="<?php echo validate_file($row['file_path_download']) ?>" class="stretched-link" download></a><img class="card-img-top w-100 d-block fit-cover" style="height: 200px;" src="<?php echo validate_image($row['file_path'])?>" alt="">
+                            <div class="card-body p-4 text-truncate text-wrap mh-100" style="height: 144px;">
+                                <h4 class="card-title"><?php echo $row['company_name'] ?></h4>
+                                <p class="card-text"><?php echo stripslashes(html_entity_decode($row['description'])) ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endwhile; ?>
                 </div>
-                <h5 class="fw-bold text-center" style="color: #ffff;margin-bottom: 25px;">Or</h5><img class="img-fluid" src="/assets/img/SSHotel-QR.png">
             </div>
-        </div>
         </div>
     </section>
     <footer class="bg-primary-gradient">
